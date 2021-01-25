@@ -1,0 +1,306 @@
+package calculadoraoperacionesPOO;
+
+import java.util.InputMismatchException;
+import java.util.Scanner;
+
+public class calculadoraPOO {
+	
+	private int num1;
+	
+	private int num2;
+	
+	
+	public calculadoraPOO(int num1, int num2) {
+		
+		this.num1=num1;
+		this.num2=num2;
+	}
+	
+	public calculadoraPOO() {
+		
+	}
+	
+	 int sumar() {
+		return num1+num2;
+	}
+	
+	 int restar() {
+		return num1-num2;
+		
+	}
+	
+	 int multiplicar() {
+		return num1*num2;
+	}
+	
+	 int dividir() {
+		return num1/num2;
+	}
+	
+	 int modulo() {
+		return num1%num2;
+	}
+
+	 public int getNum1() {
+		return num1;
+	}
+
+	public void setNum1(int num1) {
+		this.num1 = num1;
+	}
+
+	public int getNum2() {
+		return num2;
+	}
+
+	public void setNum2(int num2) {
+		this.num2 = num2;
+	}
+
+
+}
+
+
+
+public class Main {
+
+	public static void main(String[] args) {
+		
+		
+		
+		System.out.println("Bienvenido a tu calculadora");
+		
+		eligeopcion();
+
+}
+
+		public static void eligeopcion() {
+		
+	    
+	    calculadoraPOO calc= new calculadoraPOO();
+	    
+	    Scanner entrada= new Scanner(System.in);
+		
+		int opcion= 0;
+		
+		boolean opcioncorrecta= false;
+		
+		do {
+			System.out.println("\nElige la opción que desees realizar:\n\n"
+					+ "1. Sumar\n\n"
+					+ "2. Restar\n\n"
+					+ "3. Multiplicar\n\n"
+					+ "4. Dividir\n\n"
+					+ "5. Módulo\n\n"
+					+ "6. Salir de calculadora");
+			
+			do {
+				
+				try {
+					opcion= entrada.nextInt();
+					if(opcion<1 || opcion>6) {
+						System.out.println("Introduce una opción válida entre 1 y 6\n");
+						
+					}
+					opcioncorrecta= true;
+				}
+				catch(InputMismatchException e) {
+					System.out.println("Opción incorrecta. Introduce un caracter válido");
+					entrada.nextLine();
+				}
+				}
+				while(!opcioncorrecta);
+			
+			
+		
+		}
+		while(opcion<1 || opcion>6);
+		
+		
+		switch(opcion) {
+
+		case 1:
+			System.out.println("Has elegido sumar. Elige tus dos números para realizar la operación:");
+			do {
+				opcioncorrecta=false;
+				try{
+				System.out.println("Primer número:");
+				calc.setNum1(entrada.nextInt());
+				opcioncorrecta=true;
+				}
+				catch(InputMismatchException e) {
+					System.out.println("Introduce un caracter válido");
+					entrada.nextLine();
+				}
+			}
+			while(!opcioncorrecta);
+				
+				do {
+					opcioncorrecta=false;
+				try {	
+				System.out.println("Segundo número:");
+				calc.setNum2(entrada.nextInt());
+				opcioncorrecta=true;
+				}
+				catch(InputMismatchException e) {
+					System.out.println("Introduce un caracter válido");
+					entrada.nextLine();
+				}
+			}
+			while(!opcioncorrecta);
+				
+				
+			System.out.println("El resultado de sumar " + calc.getNum1() + " más " + calc.getNum2() + " da como resultado " + calc.sumar());
+			eligeopcion();
+			break;
+			
+		case 2:
+			System.out.println("Has elegido restar. Elige tus dos números para realizar la operación:");
+			do {
+			opcioncorrecta=false;
+				try{
+			System.out.println("Primer número:");
+			calc.setNum1(entrada.nextInt());
+			opcioncorrecta=true;
+				}
+				catch(InputMismatchException e) {
+				System.out.println("Introduce un caracter válido");
+				entrada.nextLine();
+				}
+			}
+			while(!opcioncorrecta);
+				
+			do {
+				opcioncorrecta=false;
+					try{
+			System.out.println("Segundo número:");
+			calc.setNum2(entrada.nextInt());
+			opcioncorrecta=true;
+					}
+			catch(InputMismatchException e) {
+				System.out.println("Introduce un caracter válido");
+				entrada.nextLine();
+				}
+			}
+			while(!opcioncorrecta);
+			
+			System.out.println("El resultado de restar " + calc.getNum1() + " menos " + calc.getNum2() + " da como resultado " + calc.restar());
+			eligeopcion();
+			break;
+			
+		case 3:
+			System.out.println("Has elegido multiplicar. Elige tus dos números para realizar la operación:");
+			do {
+				opcioncorrecta=false;
+					try{
+					System.out.println("Primer número:");
+			calc.setNum1(entrada.nextInt());
+			opcioncorrecta= true;
+					}
+					catch(InputMismatchException e) {
+						System.out.println("Introduce un caracter válido");
+						entrada.nextLine();
+					}
+					}
+					while(!opcioncorrecta);
+		
+			do {
+				opcioncorrecta=false;
+					try{
+				System.out.println("Segundo número:");
+				calc.setNum2(entrada.nextInt());
+				opcioncorrecta=true;
+					}
+					catch(InputMismatchException e) {
+						System.out.println("Introduce un caracter válido");
+						entrada.nextLine();
+					}
+					}
+					while(!opcioncorrecta);
+					
+				System.out.println("El resultado de multiplicar " + calc.getNum1() + " por " + calc.getNum2() + " da como resultado " + calc.multiplicar());
+				eligeopcion();
+				break;
+			
+		case 4:
+			System.out.println("Has elegido dividir. Elige tus dos números para realizar la operación:");
+			do {
+				opcioncorrecta=false;
+					try{
+					System.out.println("Primer número: ");
+			calc.setNum1(entrada.nextInt());
+			opcioncorrecta=true;
+					}
+					catch(InputMismatchException e) {
+						System.out.println("Introduce un caracter válido");
+						entrada.nextLine();
+					}
+					}
+					while(!opcioncorrecta);
+			
+			
+			do {
+				opcioncorrecta=false;
+					try{
+			System.out.println("Segundo número:");
+			calc.setNum2(entrada.nextInt());
+			opcioncorrecta= true;
+					}
+					catch(InputMismatchException e) {
+						System.out.println("Introduce un caracter válido");
+						entrada.nextLine();
+					}
+					}
+					while(!opcioncorrecta);
+					
+			System.out.println("El resultado de dividir " + calc.getNum1() + " por " + calc.getNum2() + " da como resultado " + calc.dividir());
+			eligeopcion();
+			break;
+			
+		case 5:
+			System.out.println("Has elegido devolver el resto(módulo). Elige tus dos números para realizar la operación:");
+			
+			do {
+				opcioncorrecta= false;
+			try {            
+			System.out.println("Primer número:");		
+			calc.setNum1(entrada.nextInt());
+			opcioncorrecta=true;
+			}
+			catch(InputMismatchException e) {
+				System.out.println("Introduce un caracter válido");
+				entrada.nextLine();
+			}
+			}
+			while(!opcioncorrecta);
+			
+			do {
+				opcioncorrecta= false;
+			try {   
+			System.out.println("Segundo número:");
+			calc.setNum2(entrada.nextInt());
+			opcioncorrecta=true;
+			}
+			catch(InputMismatchException e) {
+				System.out.println("Introduce un caracter válido");
+				entrada.nextLine();
+			}
+			}
+			while(!opcioncorrecta);
+			
+			System.out.println("El resultado de dividir " + calc.getNum1() + " por " + calc.getNum2() + " da como resultado un resto de " + calc.modulo());
+			eligeopcion();
+			break;
+			
+		case 6:
+			System.out.println("Fin del programa");
+			break;
+			
+			
+			
+			
+		}
+		
+	}
+}
+
