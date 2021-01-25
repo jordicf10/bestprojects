@@ -1,0 +1,125 @@
+package cajaEjercicioCurso;
+
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.Scanner;
+
+public class Caja {
+	
+	private int ancho;
+	
+	private int alto;
+	
+	private int profundo;
+	
+	public Caja(){
+		
+	}
+	
+	public Caja(int ancho, int alto, int profundo) {
+		this.ancho=ancho;
+		this.alto=alto;
+		this.profundo=profundo;
+	}
+	
+	public int getAncho() {
+		return ancho;
+	}
+	
+	public void setAncho(int ancho) {
+		this.ancho=ancho;
+	}
+	
+	public int getAlto() {
+		return alto;
+	}
+	
+	public void setAlto(int alto) {
+		this.alto=alto;
+	}
+	
+	public int getProfundo() {
+		return profundo;
+	}
+	
+	public void setProfundo(int profundo) {
+		this.profundo=profundo;
+	}
+	
+	
+	int areaCaja(int ancho, int alto, int profundo) {
+		return ancho*alto*profundo;
+	}
+	
+	public String getDatos() {
+		return "Ancho= " + ancho + " Alto= " + alto + " Profundo= " + profundo;
+	}
+
+}
+
+
+
+public class Main {
+
+	public static <T> void main(String[] args) {
+		
+		Caja caja1= new Caja();
+		Caja caja2= new Caja();
+		
+		Scanner entrada= new Scanner(System.in);
+		
+		System.out.println("Vamos a definir el área de la caja. Solicitaremos su ancho, alto y profundo.\n\n1. Ancho de la caja número 1= ");
+		
+		caja1.setAncho(entrada.nextInt());
+		
+		System.out.println("Ancho de la caja número 2= ");
+				
+		caja2.setAncho(entrada.nextInt());
+		
+		System.out.println("2. Alto de la caja número 1= ");
+		
+		caja1.setAlto(entrada.nextInt());
+		
+		System.out.println("2. Alto de la caja número 2= ");
+		
+		caja2.setAlto(entrada.nextInt());
+		
+		System.out.println("3. Profundo de la caja número 1= ");
+		
+		caja1.setProfundo(entrada.nextInt());
+		
+		
+		System.out.println("3. Profundo de la caja número 2= ");
+		
+		caja2.setProfundo(entrada.nextInt());
+		
+		
+		
+		
+		ArrayList<T>cajas=new ArrayList<T>();
+		
+		cajas.add((T) caja1);
+		cajas.add((T) caja2);
+		
+		for(T T: cajas) {
+		int contador= (cajas.indexOf(T))+1;
+			System.out.println("Caja : " + contador + "\n" + (((Caja) T).getDatos()) + "\nCaja : " + contador + "\n" + (((Caja) T).getAncho()));
+				
+		}
+			
+		
+		
+		System.out.println("\nLa caja " + (cajas.indexOf(caja1) + 1) + " con:\nAncho= " + caja1.getAncho() + "\n"
+				+ "Alto= " + caja1.getAlto() + "\nProfundo= " + caja1.getProfundo() + "\ntiene un área de " + 
+				caja1.areaCaja(caja1.getAncho(),caja1.getAlto(),caja1.getProfundo()));
+		
+		System.out.println("\nLa caja " + (cajas.indexOf(caja2) + 1) + " con:\nAncho= " + caja2.getAncho() + "\n"
+				+ "Alto= " + caja2.getAlto() + "\nProfundo= " + caja2.getProfundo() + "\ntiene un área de " + 
+				caja1.areaCaja(caja2.getAncho(),caja2.getAlto(),caja2.getProfundo()));
+
+	}
+
+	}
+
+
+
