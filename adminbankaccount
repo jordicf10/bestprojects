@@ -1,0 +1,125 @@
+import java.util.Scanner;
+
+public class Cuenta {
+    String titular="";
+    double cantidad;
+
+    public Cuenta(String titular) {
+        this.titular=titular;
+
+    }
+
+    public String getTitular() {
+        return titular;
+    }
+
+    public void setTitular(String titular) {
+        this.titular = titular;
+    }
+
+
+    public Cuenta(String titular, double cantidad){
+        this.titular=titular;
+        this.cantidad=cantidad;
+    }
+
+
+double total= 0;
+    double totaldinero;
+double dinero;
+
+    public void ingresar(){
+        Scanner ingreso= new Scanner(System.in);
+        System.out.println("¿Qué cantidad deseas ingresar?");
+        double dinero= ingreso.nextDouble();
+        totaldinero+= dinero;
+        System.out.println("El titular " + getTitular() + " ha ingresado " + dinero + " euros y tienes un total de " + totaldinero + " euros en la cuenta");
+        dinero=totaldinero;
+    }
+
+    public void retirar(){
+        Scanner retirada= new Scanner(System.in);
+        System.out.println("¿Qué cantidad cantidad deseas retirar?");
+        double dinero= retirada.nextDouble();
+        totaldinero-=dinero;
+
+        if(totaldinero<0){
+            //totaldinero= dinero - totaldinero;
+            System.out.println("El titular " + getTitular() + " no ha podido retirar " + Math.abs(totaldinero) + " euros ya que se hubiera quedado con un salgo negativo");
+            double totaldinero2;
+            totaldinero2= dinero-Math.abs(totaldinero);
+            System.out.println("Tu cuenta ha pasado a tener 0 euros, y no has podido sacar " + Math.abs(totaldinero) + " euros. " +
+                    "No puedes sacar más dinero del que dispones en tu cuenta. Solo has podido retirar " + Math.abs(totaldinero2) + " euros");
+            totaldinero=0;
+            }
+
+        /*if(totaldinero-dinero<=0){
+            System.out.println("No puede retirar mÃ¡s dinero. Tienes la cuenta con " + totaldinero + " euros");
+        }*/
+
+        else
+        System.out.println("El titular " + getTitular() + " ha retirado " + dinero + " euros y tienes un total de " + totaldinero + " euros en la cuenta");
+        dinero=totaldinero;
+    }
+
+    public void informacion(){
+        if(totaldinero<0){
+            System.out.println("Tu cuenta dispone de " + (Math.abs(dinero)-dinero) + " euros");
+        }
+        else
+        System.out.println("Tu cuenta dispone de " + totaldinero + " euros");
+    }
+
+    public String toString(){
+        if(cantidad == 0)
+            return "La cuenta es del titular " + titular;
+            else
+                return "La cuenta del titular " + titular + " tiene una cantidad de " + total + " euros.";
+    }
+
+
+}
+
+
+public class Main {
+
+    public static void main(String[] args) {
+        Cuenta cuenta = new Cuenta("Laura");
+        Cuenta cuenta1 = new Cuenta("Jordi", 200);
+
+        int opcion = 0;
+
+        do {
+
+            System.out.println("Elige qué deseas hacer con tu cuenta:\n1. Ingresar \n2. Retirar \n3. Información de la cuenta" +
+                    "\n4. Salir de la banca virtual");
+
+            Scanner eleccion = new Scanner(System.in);
+
+            opcion= eleccion.nextInt();
+
+            switch (opcion) {
+                case 1:
+                    cuenta.ingresar();
+                    cuenta.getTitular();
+                    break;
+
+                case 2:
+                    cuenta.retirar();
+                    break;
+
+                case 3:
+                    cuenta.informacion();
+                    break;
+
+                case 4:
+                    System.out.println("Fin del programa");
+                    break;
+
+            }
+
+        }
+        while(opcion !=4 || opcion <1 || opcion > 4);
+    }
+}
+
