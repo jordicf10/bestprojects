@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/HibernateMappingDTD5.3//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="pac.Profesor" table="profesores" >
+
+       <!-- <id name="id">
+            <column name="idProfesor"/>
+            <generator class="increment"/>
+        </id>-->
+
+        <id name="id" column ="idProfesor" type="long">
+            <generator class="increment"></generator>
+        </id>
+
+        <property name="nombre" column="nombre" type="string"></property>
+        <property name="sexo" column="sexo" type="string"></property>
+
+    </class>
+
+</hibernate-mapping>
