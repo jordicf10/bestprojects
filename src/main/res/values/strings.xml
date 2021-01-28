@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">pacDesarrollo</string>
+
+    <string-array name="musicas">
+        <item>Reproducir música</item>
+        <item>Detener musica</item>
+        <item>Bloquear</item>
+
+    </string-array>
+</resources>

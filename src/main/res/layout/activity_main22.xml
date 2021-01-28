@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/vuelta22"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/vengadores"
+    tools:context=".MainActivity22">
+
+    <EditText
+        android:id="@+id/bvaloracion"
+        android:layout_width="208dp"
+        android:layout_height="62dp"
+        android:background="#E91E63"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="Valoración"
+        android:inputType="textPersonName"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textColorHint="#FF9800"
+        app:layout_constraintBottom_toTopOf="@+id/bestreno"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bpelicula" />
+
+    <EditText
+        android:id="@+id/bpelicula"
+        android:layout_width="208dp"
+        android:layout_height="62dp"
+        android:background="#E91E63"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="Película"
+        android:inputType="textPersonName"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textColorHint="#FF9800"
+        app:layout_constraintBottom_toTopOf="@+id/bvaloracion"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/bestreno"
+        android:layout_width="208dp"
+        android:layout_height="62dp"
+        android:background="#E91E63"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="Estreno"
+        android:inputType="textPersonName"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textColorHint="#FF9800"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bvaloracion" />
+
+    <Button
+        android:id="@+id/guardar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Guardar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btnconsultar"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bestreno" />
+
+    <Button
+        android:id="@+id/btnconsultar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Consulta"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/guardar"
+        app:layout_constraintTop_toBottomOf="@+id/bestreno" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
